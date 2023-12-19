@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+
+  mailpit:
+    image: axllent/mailpit:v1.9.9
+    container_name: proxydata-mailpit
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+  mongodb:
+    image: mongo:latest
+    container_name: my_mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_DATABASE}
+    volumes:
+      - data:/data/db
+
+volumes:
+  mongo:
+
+
+
+
+
