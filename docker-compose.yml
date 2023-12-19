@@ -11,17 +11,15 @@ services:
   mongodb:
     image: mongo:latest
     container_name: my_mongodb
+    env_file:
+      - ./.env_mongo
     ports:
       - "27017:27017"
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
-      MONGO_INITDB_DATABASE: ${MONGO_DATABASE}
-    volumes:
-      - data:/data/db
+#    environment:
+#      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+#      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+#      MONGO_INITDB_DATABASE: ${MONGO_DATABASE}
 
-volumes:
-  mongo:
 
 
 

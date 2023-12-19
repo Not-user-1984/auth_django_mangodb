@@ -1,2 +1,7 @@
 Django==5.0
 djangorestframework==3.14.0
+djoser==2.2.2
+python-dotenv==1.0.0
+pymongo== 4.6.1
+mongoengine==0.27.0
+djongo-certego
